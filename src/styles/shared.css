@@ -1,0 +1,65 @@
+.paper-canvas {
+  min-height: calc(100svh - 72px);
+}
+
+.has-lightbox {
+  overflow: hidden;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: #6e5d4e;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.button-sketch {
+  --button-shadow: #f4b6c8;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 20px;
+  color: #1f1d1a;
+  background: #fffdf8;
+  border: 1.5px solid #1f1d1a;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  transform: rotate(-2deg);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background-color 160ms ease;
+}
+
+.button-sketch:hover {
+  background: #ffffff;
+  box-shadow: 8px 8px 0 var(--button-shadow);
+  transform: rotate(1deg) translate(-3px, -3px);
+}
+
+.button-sketch:focus-visible {
+  outline: 3px solid rgba(244, 182, 200, 0.9);
+  outline-offset: 4px;
+}
+
+.section-heading {
+  max-width: 620px;
+  margin-bottom: 34px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #201b16;
+  font-size: clamp(38px, 5.3vw, 68px);
+  font-weight: 850;
+  line-height: 0.98;
+  letter-spacing: 0;
+}

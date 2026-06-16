@@ -1,20 +1,21 @@
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo-small.jpg'
 import './SiteNav.css'
 
 function SiteNav() {
   return (
     <header className="site-nav" aria-label="Primary navigation">
-      <a className="brand" href="/" aria-label="ArtCrimeDaily home">
+      <Link className="brand" to="/" aria-label="ArtCrimeDaily home">
         <img src={logo} alt="" />
-      </a>
+      </Link>
       <nav className="nav-links" aria-label="Main pages and sections">
-        <a href="/hall-of-fame">Hall Of Fame</a>
-        <a href="/#process">How it works</a>
-        <a href="/order">Book drawing</a>
+        <Link to="/hall-of-fame">Hall Of Fame</Link>
+        <Link to="/how-it-works">How it works</Link>
+        <Link to="/order">Order</Link>
       </nav>
-      <a className="button-sketch nav-cta" href="/order">
+      <Link className="button-sketch nav-cta" to="/order">
         Draw my pet
-      </a>
+      </Link>
     </header>
   )
 }

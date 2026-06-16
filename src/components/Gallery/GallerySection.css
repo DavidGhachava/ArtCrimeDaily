@@ -61,6 +61,11 @@
   gap: clamp(18px, 2.4vw, 30px);
 }
 
+.gallery-motion-wrap {
+  min-width: 0;
+  display: grid;
+}
+
 .gallery-card {
   --card-shadow: #f4b6c8;
   position: relative;
@@ -79,17 +84,21 @@
     box-shadow 160ms ease;
 }
 
-.gallery-card:nth-child(2n) {
+.gallery-motion-wrap > .gallery-card {
+  height: 100%;
+}
+
+.gallery-motion-wrap:nth-child(2n) > .gallery-card {
   --card-tilt: 1.5deg;
   --card-shadow: #b8d8ba;
 }
 
-.gallery-card:nth-child(3n) {
+.gallery-motion-wrap:nth-child(3n) > .gallery-card {
   --card-tilt: -2deg;
   --card-shadow: #f7d774;
 }
 
-.gallery-card:nth-child(4n) {
+.gallery-motion-wrap:nth-child(4n) > .gallery-card {
   --card-tilt: 1deg;
   --card-shadow: #a7d8ff;
 }

@@ -1,0 +1,126 @@
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    linear-gradient(#fffaf1, #f7f0e4),
+    repeating-linear-gradient(
+      -6deg,
+      rgba(244, 182, 200, 0.16) 0 1px,
+      transparent 1px 18px
+    );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms ease;
+}
+
+.page-loader.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.page-loader-card {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  color: #201b16;
+  transform: rotate(-1.5deg) translateY(6px);
+  transition: transform 180ms ease;
+}
+
+.page-loader.is-visible .page-loader-card {
+  transform: rotate(-1.5deg) translateY(0);
+}
+
+.folding-boxes {
+  position: relative;
+  width: 74px;
+  height: 74px;
+  transform: rotate(45deg);
+}
+
+.folding-boxes span {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  background: #f4a9c0;
+  border: 1.5px solid #201b16;
+  box-shadow: 5px 5px 0 #a7d8ff;
+  animation: foldBox 1.05s infinite linear both;
+  transform-origin: 100% 100%;
+}
+
+.folding-boxes span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.folding-boxes span:nth-child(2) {
+  top: 0;
+  right: 0;
+  background: #ffc7da;
+  animation-delay: 0.13s;
+  transform-origin: 0 100%;
+}
+
+.folding-boxes span:nth-child(3) {
+  right: 0;
+  bottom: 0;
+  background: #f7d774;
+  animation-delay: 0.26s;
+  transform-origin: 0 0;
+}
+
+.folding-boxes span:nth-child(4) {
+  bottom: 0;
+  left: 0;
+  background: #f4a9c0;
+  animation-delay: 0.39s;
+  transform-origin: 100% 0;
+}
+
+.page-loader p {
+  min-width: 112px;
+  margin: 0;
+  padding: 11px 18px 12px;
+  background: #fffdf8;
+  border: 1.5px solid #201b16;
+  box-shadow: 7px 7px 0 #f4b6c8;
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+@keyframes foldBox {
+  0%,
+  10% {
+    opacity: 0.45;
+    transform: perspective(140px) rotateX(-180deg);
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+    transform: perspective(140px) rotateX(0deg);
+  }
+
+  90%,
+  100% {
+    opacity: 0.45;
+    transform: perspective(140px) rotateY(180deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader,
+  .page-loader-card,
+  .folding-boxes span {
+    animation: none;
+    transition: none;
+  }
+}

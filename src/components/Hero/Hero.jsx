@@ -1,6 +1,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import heroArtworkDefault from '../../assets/hero-art-default.jpg'
 import heroArtwork from '../../assets/hero-art.jpg'
+import { fadeUp, tapPress } from '../../utils/motion'
 import './Hero.css'
 
 const ART_RESET_DELAY = 850
@@ -51,28 +54,39 @@ function Hero() {
 
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-copy">
+      <motion.div
+        className="hero-copy"
+        initial="hidden"
+        animate="visible"
+        variants={fadeUp}
+      >
         <p className="eyebrow">Custom animal portraits</p>
         <h1 id="hero-title">Tiny portraits. Big personality.</h1>
         <p className="hero-text">
-          Send a photo and she will turn your little weirdo into a sweet, funny
+          Send a photo and I will turn your little weirdo into a sweet, funny
           keepsake.
         </p>
         <div className="hero-actions">
-          <a className="button-sketch" href="/order">
-            Book a painting
-          </a>
-          <a className="text-link" href="/#works">
-            See her work
-          </a>
+          <motion.div whileTap={tapPress}>
+            <Link className="button-sketch" to="/order">
+              Order for $6.99
+            </Link>
+          </motion.div>
+          <Link className="text-link" to="/#works">
+            See my work
+          </Link>
         </div>
-      </div>
-      <figure
+      </motion.div>
+      <motion.figure
         className={`hero-art${isAltArtworkVisible ? ' is-alt-visible' : ''}`}
         onMouseEnter={showAltArtwork}
         onMouseLeave={hideAltArtworkSoon}
         onFocus={showAltArtwork}
         onBlur={hideAltArtworkSoon}
+        initial={{ opacity: 0, scale: 0.94, rotate: 2, y: 24 }}
+        animate={{ opacity: 1, scale: 1, rotate: 0, y: 0 }}
+        whileHover={{ rotate: -1, scale: 1.015 }}
+        transition={{ duration: 0.62, ease: [0.22, 1, 0.36, 1] }}
       >
         <img
           className="hero-art-default"
@@ -80,7 +94,7 @@ function Hero() {
           alt="A funny hand-drawn animal portrait making a skeptical face"
         />
         <img className="hero-art-hover" src={heroArtwork} alt="" aria-hidden="true" />
-      </figure>
+      </motion.figure>
     </section>
   )
 }

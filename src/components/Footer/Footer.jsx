@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../../assets/logo-small.jpg'
 import './Footer.css'
 
@@ -28,19 +29,19 @@ function Footer() {
       <footer className="site-footer">
         <div className="footer-main">
           <div className="footer-brand">
-            <a href="/" aria-label="ArtCrimeDaily home">
+            <Link to="/" aria-label="ArtCrimeDaily home">
               <img src={logo} alt="" />
-            </a>
+            </Link>
             <p>Custom pet portraits with tiny chaos and big feelings.</p>
           </div>
           <nav className="footer-links" aria-label="Footer navigation">
-            <a href="/hall-of-fame">Hall Of Fame</a>
-            <a href="/#process">How it works</a>
-            <a href="/order">Book</a>
-            <a href="/#contact">Contact</a>
+            <Link to="/hall-of-fame">Hall Of Fame</Link>
+            <Link to="/how-it-works">How it works</Link>
+            <Link to="/order">Book</Link>
+            <Link to="/#contact">Contact</Link>
           </nav>
           <div className="footer-contact">
-            <p>DM for questions, weird pet stories, and booking help.</p>
+            <p>DM me questions, weird pet stories, and booking help.</p>
             <div className="footer-socials">
               <button
                 className="social-ball"
@@ -72,9 +73,9 @@ function Footer() {
         <div className="footer-bottom">
           <span>(c) 2026 ArtCrimeDaily. All rights reserved.</span>
           <div>
-            <a href="/policies/terms">Terms</a>
-            <a href="/policies/privacy">Privacy</a>
-            <a href="/policies/refunds">Refund policy</a>
+            <Link to="/policies/terms">Terms</Link>
+            <Link to="/policies/privacy">Privacy</Link>
+            <Link to="/policies/refunds">Refund policy</Link>
           </div>
         </div>
       </footer>
@@ -93,7 +94,7 @@ function Footer() {
           <div className="coming-soon-card">
             <p className="eyebrow">Instagram</p>
             <h2 id="coming-soon-title">Coming soon</h2>
-            <p>The profile link will be added once ArtCrimeDaily is ready.</p>
+            <p>I will add the profile link once ArtCrimeDaily is ready.</p>
             <button
               className="button-sketch"
               type="button"

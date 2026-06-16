@@ -23,7 +23,7 @@ export const policies = {
       {
         title: 'Payment',
         body: [
-          'Payments are made through the website as support for the artist and her painting career.',
+          'Payments are made through the website as support for my drawing work.',
           'Submitting payment does not guarantee a specific pose, style, expression, or exact likeness beyond the playful interpretation of the submitted image.',
         ],
       },
@@ -68,7 +68,7 @@ export const policies = {
         title: 'How information is used',
         body: [
           'Your information is used to create the custom drawing, contact you about the order, deliver the finished digital artwork, and respond to questions.',
-          'Pet photos, names, and stories are used only for the goal of creating the custom painting and contacting the owner unless you give permission for other use.',
+          'Pet photos, names, and stories are used only for the goal of creating the custom drawing and contacting the owner unless you give permission for other use.',
         ],
       },
       {
@@ -104,7 +104,7 @@ export const policies = {
         title: 'No refunds',
         body: [
           'All payments are final and non-refundable.',
-          'Payments support the artist and her painting career, and each request takes creative time once submitted.',
+          'Payments support my drawing work, and each request takes creative time once submitted.',
         ],
       },
       {

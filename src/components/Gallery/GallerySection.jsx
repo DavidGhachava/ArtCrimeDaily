@@ -1,5 +1,8 @@
 import { useCallback, useState } from 'react'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import Lightbox from '../Lightbox/Lightbox'
+import { hoverLift, popCard, staggerContainer, tapPress, viewportOnce } from '../../utils/motion'
 import './GallerySection.css'
 
 function GallerySection({
@@ -35,40 +38,63 @@ function GallerySection({
       id="works"
       aria-labelledby="works-title"
     >
-      <div className="gallery-heading-row">
+      <motion.div
+        className="gallery-heading-row"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+        variants={staggerContainer}
+      >
         <div className="section-heading">
           <p className="eyebrow">{eyebrow}</p>
-          <h2 id="works-title">{title}</h2>
+          <motion.h2 id="works-title" variants={popCard}>
+            {title}
+          </motion.h2>
         </div>
         {ctaHref && ctaLabel && (
-          <a className="gallery-view-link" href={ctaHref}>
+          <Link className="gallery-view-link" to={ctaHref}>
             {ctaLabel}
-          </a>
+          </Link>
         )}
-      </div>
-      <div className="gallery-grid">
+      </motion.div>
+      <motion.div
+        className="gallery-grid"
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+        variants={staggerContainer}
+      >
         {items.map((item, index) => (
-          <button
-            className="gallery-card"
-            type="button"
+          <motion.div
+            className="gallery-motion-wrap"
             key={item.name}
-            onClick={() => setActiveGalleryIndex(index)}
+            variants={popCard}
+            whileHover={hoverLift}
+            whileTap={tapPress}
           >
-            <span className="gallery-image-wrap">
-              <img src={item.image} alt={`${item.name} portrait`} loading="lazy" />
-            </span>
-            <span className="gallery-name">{item.name}</span>
-          </button>
+            <button
+              className="gallery-card"
+              type="button"
+              onClick={() => setActiveGalleryIndex(index)}
+            >
+              <span className="gallery-image-wrap">
+                <img src={item.image} alt={`${item.name} portrait`} loading="lazy" />
+              </span>
+              <span className="gallery-name">{item.name}</span>
+            </button>
+          </motion.div>
         ))}
         {includeOrderCard && (
-          <a className="gallery-card gallery-order-card" href="/order">
+          <motion.div variants={popCard} whileHover={hoverLift} whileTap={tapPress}>
+            <Link className="gallery-card gallery-order-card" to="/order">
             <span className="gallery-order-plus" aria-hidden="true">
               +
             </span>
             <span className="gallery-name">Order yours</span>
-          </a>
+            </Link>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
       <Lightbox
         item={activeGalleryItem}
         onClose={() => setActiveGalleryIndex(null)}

@@ -11,7 +11,7 @@ function HomePage() {
       <Hero />
       <GallerySection
         ctaHref="/hall-of-fame"
-        ctaLabel="View all paintings"
+        ctaLabel="View all drawings"
         includeOrderCard
         items={homepageGalleryItems}
         title="A tiny wall of legends."

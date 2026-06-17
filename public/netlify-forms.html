@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtCrimeDaily Forms</title>
+  </head>
+  <body>
+    <form
+      name="pet-order"
+      method="POST"
+      netlify
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      enctype="multipart/form-data"
+    >
+      <input type="hidden" name="form-name" value="pet-order" />
+      <p hidden>
+        <label>
+          Do not fill this out
+          <input name="bot-field" />
+        </label>
+      </p>
+      <label>
+        Email
+        <input type="email" name="email" />
+      </label>
+      <label>
+        TikTok
+        <input type="text" name="tiktok" />
+      </label>
+      <label>
+        Pet name
+        <input type="text" name="petName" />
+      </label>
+      <label>
+        Pet photo
+        <input type="file" name="petPhoto" />
+      </label>
+      <label>
+        Story
+        <textarea name="story"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

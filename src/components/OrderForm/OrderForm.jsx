@@ -83,7 +83,11 @@ function OrderForm() {
       </label>
       <div className="payment-note">
         <strong>Digital-only goofy pet drawing. No refunds or revisions.</strong>
-        <p>Use the same email at Stripe checkout so the payment matches this pet.</p>
+        <p>After this form saves, Stripe checkout opens in the next step.</p>
+      </div>
+      <div className="checkout-note">
+        <strong>Important:</strong> use the same email here and at Stripe checkout so we can match
+        your payment to your pet.
       </div>
       {formError ? (
         <p className="form-error" role="alert">

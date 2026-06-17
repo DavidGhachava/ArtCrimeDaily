@@ -92,6 +92,21 @@
   line-height: 1.35;
 }
 
+.checkout-note {
+  padding: 13px 14px;
+  color: #201b16;
+  background: #d8ecff;
+  border: 1.5px solid rgba(31, 29, 26, 0.72);
+  box-shadow: 6px 6px 0 #f4b6c8;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.checkout-note strong {
+  font-weight: 950;
+}
+
 .form-error {
   margin: 0;
   padding: 12px 14px;

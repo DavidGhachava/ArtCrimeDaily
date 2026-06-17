@@ -4,9 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>jazzyart</title>
+    <title>ArtCrimeDaily</title>
   </head>
   <body>
+    <form
+      name="pet-order"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      enctype="multipart/form-data"
+      hidden
+    >
+      <input type="hidden" name="form-name" value="pet-order" />
+      <input name="bot-field" />
+      <input type="email" name="email" />
+      <input type="text" name="tiktok" />
+      <input type="text" name="petName" />
+      <input type="file" name="petPhoto" />
+      <textarea name="story"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
